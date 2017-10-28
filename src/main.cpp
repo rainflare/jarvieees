@@ -69,45 +69,45 @@ void trackEye(cv::Mat& im, cv::Mat& tpl, cv::Rect& rect)
 float innerAngle(float px1, float py1, float px2, float py2, float cx1, float cy1)
 {
 
- float dist1 = std::sqrt(  (px1-cx1)*(px1-cx1) + (py1-cy1)*(py1-cy1) );
- float dist2 = std::sqrt(  (px2-cx1)*(px2-cx1) + (py2-cy1)*(py2-cy1) );
+	float dist1 = std::sqrt(  (px1-cx1)*(px1-cx1) + (py1-cy1)*(py1-cy1) );
+	float dist2 = std::sqrt(  (px2-cx1)*(px2-cx1) + (py2-cy1)*(py2-cy1) );
 
- float Ax, Ay;
- float Bx, By;
- float Cx, Cy;
+	float Ax, Ay;
+	float Bx, By;
+	float Cx, Cy;
 
- //find closest point to C  
- //printf("dist = %lf %lf\n", dist1, dist2);  
+	//find closest point to C  
+	//printf("dist = %lf %lf\n", dist1, dist2);  
 
- Cx = cx1;
- Cy = cy1;
- if(dist1 < dist2)
- {
-  Bx = px1;
-  By = py1;
-  Ax = px2;
-  Ay = py2;
-
-
- }else{
-  Bx = px2;
-  By = py2;
-  Ax = px1;
-  Ay = py1;
- }
-
-
- float Q1 = Cx - Ax;
- float Q2 = Cy - Ay;
- float P1 = Bx - Ax;
- float P2 = By - Ay;
+	Cx = cx1;
+	Cy = cy1;
+	if(dist1 < dist2)
+	{
+		Bx = px1;
+		By = py1;
+		Ax = px2;
+		Ay = py2;
+	}
+	else
+	{
+		Bx = px2;
+		By = py2;
+		Ax = px1;
+		Ay = py1;
+	}
 
 
- float A = std::acos( (P1*Q1 + P2*Q2) / ( std::sqrt(P1*P1+P2*P2) * std::sqrt(Q1*Q1+Q2*Q2) ) );
+	float Q1 = Cx - Ax;
+	float Q2 = Cy - Ay;
+	float P1 = Bx - Ax;
+	float P2 = By - Ay;
 
- A = A*180/CV_PI;
 
- return A;
+	float A = std::acos( (P1*Q1 + P2*Q2) / ( std::sqrt(P1*P1+P2*P2) * std::sqrt(Q1*Q1+Q2*Q2) ) );
+
+	A = A*180/CV_PI;
+
+	return A;
 }
 
 void CallbackFunc(int event, int x, int y, int flags, void* userdata)
