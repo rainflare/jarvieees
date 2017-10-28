@@ -8,7 +8,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/objdetect/objdetect.hpp"
 
-
+//the following is the declaration of some variables
 int minH = 0, maxH = 20, minS = 30, maxS = 150, minV = 60, maxV = 255;
 cv::Mat frame, eye_tpl;
 cv::Rect eye_bb;
@@ -64,7 +64,7 @@ void trackEye(cv::Mat& im, cv::Mat& tpl, cv::Rect& rect)
 		rect.x = rect.y = rect.width = rect.height = 0;
 }
 
-
+//this is a function
 float innerAngle(float px1, float py1, float px2, float py2, float cx1, float cy1)
 {
 
