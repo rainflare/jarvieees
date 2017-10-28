@@ -10,7 +10,7 @@
 
 //the following is the declaration of some variables
 int minH = 0, maxH = 20, minS = 30, maxS = 150, minV = 60, maxV = 255;
-cv::Mat frame, eye_tpl;
+cv::Mat frame, eye_tpl; /*NICO NICO NIIIIIIIII*/ //senpai
 cv::Rect eye_bb;
 int count = 0;
 int a[1005][1005][3];
