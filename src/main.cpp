@@ -38,7 +38,7 @@ int detectEye(cv::Mat& im, cv::Mat& tpl, cv::Rect& rect)
 		}
 	}
 
-	return eyes.size();
+	return eyes.size(); //returns the size of eyes
 }
 
 void trackEye(cv::Mat& im, cv::Mat& tpl, cv::Rect& rect)
