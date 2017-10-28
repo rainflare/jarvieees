@@ -51,6 +51,7 @@ void trackEye(cv::Mat& im, cv::Mat& tpl, cv::Rect& rect)
 	cv::Mat dst(window.width - tpl.rows + 1, window.height - tpl.cols + 1, CV_32FC1);
 	cv::matchTemplate(im(window), tpl, dst, CV_TM_SQDIFF_NORMED);
 
+	// because a normal minval just wouldn't cut it
 	double minval, maxval;
 	cv::Point minloc, maxloc;
 	cv::minMaxLoc(dst, &minval, &maxval, &minloc, &maxloc);
