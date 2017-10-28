@@ -64,7 +64,7 @@ void trackEye(cv::Mat& im, cv::Mat& tpl, cv::Rect& rect)
 		rect.x = rect.y = rect.width = rect.height = 0;
 }
 
-
+//this is a function
 float innerAngle(float px1, float py1, float px2, float py2, float cx1, float cy1)
 {
 
