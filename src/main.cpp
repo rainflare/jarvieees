@@ -10,7 +10,7 @@
 
 //the following is the declaration of some variables
 int minH = 0, maxH = 20, minS = 30, maxS = 150, minV = 60, maxV = 255;
-cv::Mat frame, eye_tpl; /*NICO NICO NIIIIIIIII*/ //senpai
+cv::Mat frame, eye_tpl; /*NICO NICO NIIIIIIIII*/ //thanks senpai
 cv::Rect eye_bb;
 int count = 0;
 int a[1005][1005][3];
@@ -116,7 +116,7 @@ void CallbackFunc(int event, int x, int y, int flags, void* userdata)
   cv::Mat HSV;
   cv::cvtColor(RGB, HSV, CV_BGR2HSV);
   cv::Vec3b pixel = HSV.at<cv::Vec3b>(0, 0);
-  if (event == cv::EVENT_LBUTTONDBLCLK) // on double left clcik
+  if (event == cv::EVENT_LBUTTONDBLCLK) // on double left click
   {
       std::cout << "Click" << std::endl;
       int h = pixel.val[0];
