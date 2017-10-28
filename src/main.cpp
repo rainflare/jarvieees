@@ -8,7 +8,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/objdetect/objdetect.hpp"
 
-
+//the following is the declaration of some variables
 int minH = 0, maxH = 20, minS = 30, maxS = 150, minV = 60, maxV = 255;
 cv::Mat frame, eye_tpl;
 cv::Rect eye_bb;
