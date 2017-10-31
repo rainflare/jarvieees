@@ -228,7 +228,7 @@ int main()
 
   while (1)
   {
-      cap >> frame;
+    cap >> frame;
 
 	  if (frame.empty() || face_cascade.empty() || eye_cascade.empty()) {
 		  continue;
@@ -538,8 +538,8 @@ int main()
 
 	  frames++;
 
-      cv::imshow(windowName, frame);
-      //if (cv::waitKey(30) >= 0) break;
+    cv::imshow(windowName, frame);
+    //if (cv::waitKey(30) >= 0) break;
 	  cv::waitKey(30);
   }
   return 0;
