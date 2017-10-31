@@ -538,8 +538,8 @@ int main()
 
 	  frames++;
 
-      cv::imshow(windowName, frame);
-      //if (cv::waitKey(30) >= 0) break;
+    cv::imshow(windowName, frame);
+    //if (cv::waitKey(30) >= 0) break;
 	  cv::waitKey(30);
   }
   return 0;
