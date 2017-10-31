@@ -351,15 +351,9 @@ int main()
 
 				  fist.push_back(std::make_pair(frames, validPoints.size()));
 
-				  for (int i = 0; i < validPoints.size(); i++) {
-					  for (int j = i + 1; j < validPoints.size(); j++) {
-						  if (validPoints[i].x > validPoints[j].x) {
-							  auto temp = validPoints[i];
-							  validPoints[i] = validPoints[j];
-							  validPoints[j] = temp;
-						  }
-					  }
-				  }
+          std::sort(validPoints.begin(), validPoints.end(), [](cv::Point &a, cv::Point &b) {
+          	return a.x < b.x;
+          });
 
 				  while (!fistopen.empty() && fistopen.front().first < frames - 20) {
 					  fistopen.pop_front();
@@ -376,15 +370,9 @@ int main()
 
 				  fistopen.push_back(std::make_pair(frames, validPoints.size()));
 
-				  for (int i = 0; i < validPoints.size(); i++) {
-					  for (int j = i + 1; j < validPoints.size(); j++) {
-						  if (validPoints[i].x > validPoints[j].x) {
-							  auto temp = validPoints[i];
-							  validPoints[i] = validPoints[j];
-							  validPoints[j] = temp;
-						  }
-					  }
-				  }
+          std::sort(validPoints.begin(), validPoints.end(), [](cv::Point &a, cv::Point &b) {
+          	return a.x < b.x;
+          });
 				  /*
 								for (int i = 0; i < middle.size(); i++) {
 								  std::cout << middle[i].second.x << " ";
@@ -423,15 +411,9 @@ int main()
 				  }
 
 
-				  for (int i = 0; i < validPoints.size(); i++) {
-					  for (int j = i + 1; j < validPoints.size(); j++) {
-						  if (validPoints[i].y > validPoints[j].y) {
-							  auto temp = validPoints[i];
-							  validPoints[i] = validPoints[j];
-							  validPoints[j] = temp;
-						  }
-					  }
-				  }
+          std::sort(validPoints.begin(), validPoints.end(), [](cv::Point &a, cv::Point &b) {
+          	return a.y < b.y;
+          });
 
 				  while (!vertical.empty() && vertical.front().first < frames - 30) {
 					  vertical.pop_front();
