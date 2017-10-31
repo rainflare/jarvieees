@@ -228,7 +228,7 @@ int main()
 
   while (1)
   {
-      cap >> frame;
+    cap >> frame;
 
 	  if (frame.empty() || face_cascade.empty() || eye_cascade.empty()) {
 		  continue;
